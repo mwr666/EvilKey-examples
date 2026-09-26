@@ -8,6 +8,10 @@
   <strong>microSD examples</strong>
 </p>
 
+<p align="center">
+  <img src="docs/github/evilkey-lvgl-logo-motion.webp" alt="Animated EvilKey logo with the device screensaver glitch" width="128">
+</p>
+
 # EvilKey microSD examples
 
 Original sample scripts for the EvilKey USB Tool. Copy the `microSD_EVILKEY_EXAMPLES/duckyscripts/` tree to the root of a microSD card and read each example's instructions before use. Some examples handle credentials or input events; run them only on systems you own or are explicitly authorized to test, and use synthetic data when learning or demonstrating them.
