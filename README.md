@@ -18,6 +18,8 @@
 
 Original sample scripts for the EvilKey USB Tool. Copy the `microSD_EVILKEY_EXAMPLES/duckyscripts/` tree to the root of a microSD card and read each example's instructions before use. Some examples handle credentials or input events; run them only on systems you own or are explicitly authorized to test, and use synthetic data when learning or demonstrating them.
 
+**Start here:** [hello_world.duck](microSD_EVILKEY_EXAMPLES/duckyscripts/test/hello_world.duck) is a physically tested Windows demo. Select it in USB Tool and press **RUN** to open Notepad and type a harmless three-line joke. [Copy and test instructions](microSD_EVILKEY_EXAMPLES/README.md#tested-windows-demo).
+
 The separate Hak5 payload collection is not included. Four locally retained examples with third-party authorship or derivation notices are also excluded pending a separate rights review. See [package details](microSD_EVILKEY_EXAMPLES/README.md) and the [license](LICENSE.md).
 
 [▶ Watch the real EvilKey device GUI](https://cdn.hackaday.io/files/2068078848030688/evilkey-gui-real-silent.mp4) — silent camera footage of the touchscreen in use on the prototype.

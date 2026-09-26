@@ -12,3 +12,22 @@ permission or use another lawful distribution basis before publishing those
 adapted payloads.
 
 The separately analyzed Hak5 compatibility repository is not included.
+
+## Tested Windows demo
+
+[`duckyscripts/test/hello_world.duck`](duckyscripts/test/hello_world.duck) is a
+Windows-only USB Tool demonstration, physically tested by the project owner.
+After you select it and press **RUN** on EvilKey, it minimizes open windows,
+opens Notepad, creates a new document and types:
+
+```text
+YOU HAVE BEEN HACKED
+Relax. This key only opened Notepad.
+The only data stolen was your attention.
+```
+
+Save your work before running it on your own unlocked computer. The script does
+not run when the device is connected or the card is mounted. Copy the
+`duckyscripts/` tree to the card, safely eject it, enter USB Tool, select the
+script, then press **RUN**. This demo reads no host files and sends no data over
+the network.
