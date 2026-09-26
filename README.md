@@ -20,6 +20,8 @@ Original sample scripts for the EvilKey USB Tool. Copy the `microSD_EVILKEY_EXAM
 
 The separate Hak5 payload collection is not included. Four locally retained examples with third-party authorship or derivation notices are also excluded pending a separate rights review. See [package details](microSD_EVILKEY_EXAMPLES/README.md) and the [license](LICENSE.md).
 
+[▶ Watch the real EvilKey device GUI](https://cdn.hackaday.io/files/2068078848030688/evilkey-gui-real-silent.mp4) — silent camera footage of the touchscreen in use on the prototype.
+
 ## Related projects
 
 - [EvilKey firmware](https://github.com/mwr666/EvilKey-firmware) — open AGPLv3 firmware and USB Tool implementation.
