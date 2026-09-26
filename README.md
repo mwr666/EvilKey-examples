@@ -21,6 +21,8 @@ The separate Hak5 payload collection is not included. Four locally retained exam
 
 I welcome ideas for clear, testable examples that demonstrate useful EvilKey behavior without relying on third-party payload collections.
 
+Voluntary support is available through [GitHub Sponsors](https://github.com/sponsors/mwr666). Sponsorship is not a software purchase or a kit preorder.
+
 ## License
 
 Original EvilKey examples are source available for private noncommercial use under [EvilKey microSD Examples License](LICENSE.md). Commercial use requires separate written permission from Michał Wojciechowski. Independently licensed material retains its own terms; the license does not cover outside script libraries.
