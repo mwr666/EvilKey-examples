@@ -24,6 +24,19 @@ Original sample scripts for the EvilKey USB Tool. Copy the `microSD_EVILKEY_EXAM
 
 [▶ Watch the silent 37-second physical demo](https://cdn.hackaday.io/files/2068078848030688/evilkey-usb-tool-hello-world-real-silent.mp4). The edit joins two real camera takes; captions and the logo outro are editorial. The payload starts only when selected on the key and **RUN** is pressed.
 
+## Hardware for the PCB V1 USB Tool demo
+
+| Quantity | Component |
+| --- | --- |
+| 1 | Waveshare ESP32-S3 Touch AMOLED 1.64, **PCB V1** |
+| 1 | Short data-capable USB-C cable/loop (Unitek C14179ABK-style in the prototype) |
+| 1 | Printed V1 enclosure (the current prototype is home printed) |
+| 4 | M2 × 5 mm screws for the module |
+| 1 | M5 × 10 mm flat-point grub screw for the cable loop |
+| 1 | **FAT32-formatted microSD card** for USB Tool scripts |
+
+The microSD card is needed to reproduce `hello_world.duck`; FIDO2 and Air Mouse work without it. Copy this repository's `microSD_EVILKEY_EXAMPLES/duckyscripts/` tree to the card root; the tested script is `/duckyscripts/test/hello_world.duck`. Card capacity is not specified. See the [Hackaday component list](https://hackaday.io/project/206807/components) and [build instructions](https://hackaday.io/project/206807/instructions).
+
 The separate Hak5 payload collection is not included. Four locally retained examples with third-party authorship or derivation notices are also excluded pending a separate rights review. See [package details](microSD_EVILKEY_EXAMPLES/README.md) and the [license](LICENSE.md).
 
 [▶ Watch the real EvilKey device GUI](https://cdn.hackaday.io/files/2068078848030688/evilkey-gui-real-silent.mp4) — silent camera footage of the touchscreen in use on the prototype.
