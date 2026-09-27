@@ -41,7 +41,11 @@ The microSD card is needed to reproduce `hello_world.duck`; FIDO2 and Air Mouse 
 
 The separate Hak5 payload collection is not included. Four locally retained examples with third-party authorship or derivation notices are also excluded pending a separate rights review. See [package details](microSD_EVILKEY_EXAMPLES/README.md) and the [license](LICENSE.md).
 
-[▶ Watch the real EvilKey device GUI](https://cdn.hackaday.io/files/2068078848030688/evilkey-gui-real-silent.mp4) — silent camera footage of the touchscreen in use on the prototype.
+## Real device GUI
+
+<p align="center"><a href="https://youtube.com/shorts/MK2NCrWpuXo"><img src="https://raw.githubusercontent.com/mwr666/EvilKey-firmware/main/docs/github/evilkey-gui-short-poster.png" alt="Watch the real EvilKey touch GUI Short" width="420"></a></p>
+
+[▶ Watch the real-device GUI Short](https://youtube.com/shorts/MK2NCrWpuXo) — silent footage of the touchscreen in use on the prototype, with an animated logo ending. The USB Tool script demonstration above is a separate video.
 
 ## Related projects
 
