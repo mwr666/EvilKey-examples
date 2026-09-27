@@ -47,6 +47,12 @@ The separate Hak5 payload collection is not included. Four locally retained exam
 
 [▶ Watch the real-device GUI Short](https://youtube.com/shorts/MK2NCrWpuXo) — silent footage of the touchscreen in use on the prototype, with an animated logo ending. The USB Tool script demonstration above is a separate video.
 
+<p align="center">
+  <a href="docs/github/evilkey-on-device-pin-real.jpg"><img src="docs/github/evilkey-on-device-pin-real.jpg" alt="Real EvilKey prototype showing its FIDO2 PIN keypad" width="280"></a>
+</p>
+
+<p align="center"><sub>Real PCB V1 prototype with the FIDO2 PIN keypad on its touchscreen. This is a FIDO-role feature; microSD example scripts run only after USB Tool is selected and RUN is pressed.</sub></p>
+
 ## Related projects
 
 - [EvilKey firmware](https://github.com/mwr666/EvilKey-firmware) — open AGPLv3 firmware and USB Tool implementation.
