@@ -22,7 +22,7 @@ Original sample scripts for the EvilKey USB Tool. Copy the `microSD_EVILKEY_EXAM
 
 <p align="center"><a href="https://youtube.com/shorts/k0a0o6s1Ayg"><img src="https://raw.githubusercontent.com/mwr666/EvilKey-firmware/main/docs/github/evilkey-usb-tool-demo-poster.jpg" alt="Watch hello_world.duck on a real EvilKey and Windows PC" width="420"></a></p>
 
-[▶ Watch the USB Tool Short](https://youtube.com/shorts/k0a0o6s1Ayg) · [Silent MP4 on Hackaday](https://cdn.hackaday.io/files/2068078848030688/evilkey-usb-tool-hello-world-real-silent.mp4)
+[▶ Watch the USB Tool Short](https://youtube.com/shorts/k0a0o6s1Ayg)
 
 USB Tool can send scripted keyboard and mouse input, save results on microSD and use Keystroke Reflection as a return channel when a mass-storage drive is unavailable. Scripts can move files or collect data within the host session's permissions and defenses. This Short shows the safe `hello_world.duck` HID test on the owner's Windows computer, **not** file transfer or data collection. The edit joins two real camera takes with captions and a logo outro. Nothing runs on connection: select a script on the key and press **RUN**.
 
