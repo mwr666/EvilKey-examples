@@ -20,6 +20,10 @@ Original sample scripts for the EvilKey USB Tool. Copy the `microSD_EVILKEY_EXAM
 
 **Start here:** [hello_world.duck](microSD_EVILKEY_EXAMPLES/duckyscripts/test/hello_world.duck) is a physically tested Windows demo. Select it in USB Tool and press **RUN** to open Notepad and type a harmless three-line joke. [Copy and test instructions](microSD_EVILKEY_EXAMPLES/README.md#tested-windows-demo).
 
+<p align="center"><a href="https://cdn.hackaday.io/files/2068078848030688/evilkey-usb-tool-hello-world-real-silent.mp4"><img src="https://raw.githubusercontent.com/mwr666/EvilKey-firmware/main/docs/github/evilkey-usb-tool-demo-poster.jpg" alt="Play hello_world.duck on a real EvilKey and Windows PC" width="420"></a></p>
+
+[▶ Watch the silent 37-second physical demo](https://cdn.hackaday.io/files/2068078848030688/evilkey-usb-tool-hello-world-real-silent.mp4). The edit joins two real camera takes; captions and the logo outro are editorial. The payload starts only when selected on the key and **RUN** is pressed.
+
 The separate Hak5 payload collection is not included. Four locally retained examples with third-party authorship or derivation notices are also excluded pending a separate rights review. See [package details](microSD_EVILKEY_EXAMPLES/README.md) and the [license](LICENSE.md).
 
 [▶ Watch the real EvilKey device GUI](https://cdn.hackaday.io/files/2068078848030688/evilkey-gui-real-silent.mp4) — silent camera footage of the touchscreen in use on the prototype.
