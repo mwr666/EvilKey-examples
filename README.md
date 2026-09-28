@@ -47,6 +47,12 @@ The separate Hak5 payload collection is not included. Four locally retained exam
 
 [▶ Watch the real-device GUI Short](https://youtube.com/shorts/MK2NCrWpuXo) — silent footage of the touchscreen in use on the prototype, with an animated logo ending. The USB Tool script demonstration above is a separate video.
 
+## Real Air Mouse demo
+
+<p align="center"><a href="https://youtube.com/shorts/b0x_XzGABB8"><img src="https://raw.githubusercontent.com/mwr666/EvilKey-firmware/main/docs/github/evilkey-air-mouse-short-poster.png" alt="Watch the real EvilKey Air Mouse Short" width="420"></a></p>
+
+[▶ Watch the Air Mouse Short](https://youtube.com/shorts/b0x_XzGABB8) — the QMI8658 sensor steers a real computer cursor while **MOVE** is held; the touchscreen provides clicks and scrolling. This mouse-only USB role is separate from USB Tool, so the microSD scripts in this repository do not run in Air Mouse mode.
+
 <p align="center">
   <a href="docs/github/evilkey-on-device-pin-real.jpg"><img src="docs/github/evilkey-on-device-pin-real.jpg" alt="Real EvilKey prototype showing its FIDO2 PIN keypad" width="280"></a>
 </p>
