@@ -4,4 +4,6 @@ __pycache__/
 *.tmp
 *.bak
 *.zip
+*.ekapp
+*.wasm
 .DS_Store

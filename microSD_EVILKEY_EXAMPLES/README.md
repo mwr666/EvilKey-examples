@@ -5,6 +5,9 @@ This repository contains original EvilKey scripts in this directory. Copy its
 edit each example's configuration and follow its own README before use. Run
 security-testing examples only on systems you are authorized to test.
 
+These are USB Tool scripts. The separate firmware Apps feature uses `.ekapp`
+files under `/evilkey/apps/`; copying `duckyscripts/` does not install an app.
+
 The private working project retains four folders with third-party author or
 derivation notices. They are excluded from this public repository and are not
 covered by [EvilKey microSD Examples License 1.0](LICENSE.md). Obtain separate
