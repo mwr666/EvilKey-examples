@@ -24,6 +24,12 @@ repository contains no `.ekapp` package or application source. The
 [firmware ABI v4 specification](https://github.com/mwr666/EvilKey-firmware/blob/main/apps/ABI_V4.md)
 documents independent Apps packages.
 
+ABI v4 can keep an app's state in a `<id>.save` file beside its `.ekapp` on
+microSD. These sidecars belong to their individual apps. The USB Tool scripts
+below neither install Apps nor contain game code, app bytecode or game saves.
+Firmware 0.5.0 includes a microSD save fix. Its exact binary passed a device
+smoke check; see the firmware repository for release availability.
+
 **Start here:** [hello_world.duck](microSD_EVILKEY_EXAMPLES/duckyscripts/test/hello_world.duck) is a physically tested Windows demo. Select it in USB Tool and press **RUN** to open Notepad and type a harmless three-line joke. [Copy and test instructions](microSD_EVILKEY_EXAMPLES/README.md#tested-windows-demo).
 
 <p align="center"><a href="https://youtube.com/shorts/k0a0o6s1Ayg"><img src="https://raw.githubusercontent.com/mwr666/EvilKey-firmware/main/docs/github/evilkey-usb-tool-demo-poster.jpg" alt="Watch hello_world.duck on a real EvilKey and Windows PC" width="420"></a></p>
