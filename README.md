@@ -21,7 +21,7 @@ Original sample scripts for the EvilKey USB Tool. Copy the `microSD_EVILKEY_EXAM
 The firmware's separate **Apps** screen loads `.ekapp` bytecode from
 `/evilkey/apps/`. These USB Tool scripts are a different format and this
 repository contains no `.ekapp` package or application source. The
-[firmware ABI specification](https://github.com/mwr666/EvilKey-firmware/blob/main/apps/ABI_V3.md)
+[firmware ABI v4 specification](https://github.com/mwr666/EvilKey-firmware/blob/main/apps/ABI_V4.md)
 documents independent Apps packages.
 
 **Start here:** [hello_world.duck](microSD_EVILKEY_EXAMPLES/duckyscripts/test/hello_world.duck) is a physically tested Windows demo. Select it in USB Tool and press **RUN** to open Notepad and type a harmless three-line joke. [Copy and test instructions](microSD_EVILKEY_EXAMPLES/README.md#tested-windows-demo).
