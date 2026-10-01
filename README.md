@@ -38,6 +38,20 @@ smoke check; see the firmware repository for release availability.
 
 USB Tool can send scripted keyboard and mouse input, save results on microSD and use Keystroke Reflection as a return channel when a mass-storage drive is unavailable. Scripts can move files or collect data within the host session's permissions and defenses. This Short shows the safe `hello_world.duck` HID test on the owner's Windows computer, **not** file transfer or data collection. The edit joins two real camera takes with captions and a logo outro. Nothing runs on connection: select a script on the key and press **RUN**.
 
+## Watch Apps on the real device
+
+<p align="center"><a href="https://youtube.com/shorts/e-bcwSlzdcg"><img src="https://raw.githubusercontent.com/mwr666/EvilKey-firmware/main/docs/github/evilkey-apps-short-poster.png" alt="Watch EvilBlocks and EvilPinball running on the real EvilKey prototype" width="420"></a></p>
+
+[▶ Watch the Apps Short](https://youtube.com/shorts/e-bcwSlzdcg)
+
+I needed a FIDO2 key. It now runs falling blocks and pinball. Apparently I was left unsupervised. This silent Short shows **EvilBlocks and EvilPinball on the real PCB V1 prototype**: select an app from microSD, press **RUN**, then play using the touchscreen. The captions and 3D logo/glitch outro are edited; the gameplay is filmed during development, rather than a benchmark of the latest app builds.
+
+Apps are independent `.ekapp` packages in `/evilkey/apps/`, launched through **Settings → Apps** in the normal FIDO USB role. [Firmware 0.5.0 and its MIT SDK](https://github.com/mwr666/EvilKey-firmware/releases/tag/v0.5.0) provide ABI v4 with two touch contacts, accelerometer data, image assets and per-app microSD saves. Game packages have separate licenses and are not bundled in the public firmware, Manager or USB Tool examples repositories.
+
+What app would you put on a device like this? Useful tools and gloriously unnecessary experiments are welcome.
+
+These games use the Apps format, separate from the `.duck` USB Tool scripts supplied here.
+
 ## Hardware for the PCB V1 USB Tool demo
 
 | Quantity | Component |
