@@ -7,3 +7,9 @@ __pycache__/
 *.ekapp
 *.wasm
 .DS_Store
+
+.cache/
+
+artifacts/
+
+release/

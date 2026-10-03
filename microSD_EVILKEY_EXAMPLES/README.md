@@ -1,18 +1,15 @@
 # EvilKey microSD examples
 
-This repository contains original EvilKey scripts in this directory. Copy its
-`duckyscripts/` tree to the root of a microSD card, then
+The public examples ZIP contains the original EvilKey scripts in this
+directory. Copy its `duckyscripts/` tree to the root of a microSD card, then
 edit each example's configuration and follow its own README before use. Run
 security-testing examples only on systems you are authorized to test.
 
-These are USB Tool scripts. The separate firmware Apps feature uses `.ekapp`
-files under `/evilkey/apps/`; copying `duckyscripts/` does not install an app.
-
-The private working project retains four folders with third-party author or
-derivation notices. They are excluded from this public repository and are not
-covered by [EvilKey microSD Examples License 1.0](LICENSE.md). Obtain separate
-permission or use another lawful distribution basis before publishing those
-adapted payloads.
+The working project also retains four folders with third-party author or
+derivation notices. They are not in the public examples ZIP and are not
+covered by [EvilKey microSD Examples License 1.0](LICENSE.md). Their paths are
+listed in that license. Obtain separate permission or use another lawful
+distribution basis before publishing those adapted payloads.
 
 The separately analyzed Hak5 compatibility repository is not included.
 
