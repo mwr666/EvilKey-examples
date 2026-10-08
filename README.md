@@ -22,7 +22,7 @@ The firmware's separate **Apps** screen loads `.ekapp` bytecode from
 `/evilkey/apps/`. These USB Tool scripts are a different format and this
 repository contains no `.ekapp` package or application source. The
 [firmware ABI specifications](https://github.com/mwr666/EvilKey-firmware/blob/main/apps/README.md)
-documents independent Apps packages.
+describe independent Apps packages.
 
 ABI v4 can keep an app's state in a `<id>.save` file beside its `.ekapp` on
 microSD. These sidecars belong to their individual apps. The USB Tool scripts
