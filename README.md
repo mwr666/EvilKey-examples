@@ -21,13 +21,13 @@ Original sample scripts for the EvilKey USB Tool. Copy the `microSD_EVILKEY_EXAM
 The firmware's separate **Apps** screen loads `.ekapp` bytecode from
 `/evilkey/apps/`. These USB Tool scripts are a different format and this
 repository contains no `.ekapp` package or application source. The
-[firmware ABI v4 specification](https://github.com/mwr666/EvilKey-firmware/blob/main/apps/ABI_V4.md)
+[firmware ABI specifications](https://github.com/mwr666/EvilKey-firmware/blob/main/apps/README.md)
 documents independent Apps packages.
 
 ABI v4 can keep an app's state in a `<id>.save` file beside its `.ekapp` on
 microSD. These sidecars belong to their individual apps. The USB Tool scripts
 below neither install Apps nor contain game code, app bytecode or game saves.
-Firmware 0.6.1 retains the microSD save fixes, icon launcher and BLE controls, and aligns Apps/Settings ring animations. See its release for the accepted image and test scope. The example scripts themselves are unchanged.
+Firmware 0.7.4 adds a native Jet GUI and ABI v5 native scenes, retains ABI v4 compatibility, and keeps the launcher, saves and BLE controls. See its release for the accepted image and test scope. The example scripts themselves are unchanged.
 
 **Start here:** [hello_world.duck](microSD_EVILKEY_EXAMPLES/duckyscripts/test/hello_world.duck) is a physically tested Windows demo. Select it in USB Tool and press **RUN** to open Notepad and type a harmless three-line joke. [Copy and test instructions](microSD_EVILKEY_EXAMPLES/README.md#tested-windows-demo).
 
@@ -45,7 +45,7 @@ USB Tool can send scripted keyboard and mouse input, save results on microSD and
 
 I needed a FIDO2 key. It now runs falling blocks and pinball. Apparently I was left unsupervised. This silent Short shows **EvilBlocks and EvilPinball on the real PCB V1 prototype**: select an app from microSD, press **RUN**, then play using the touchscreen. The captions and 3D logo/glitch outro are edited; the gameplay is filmed during development, rather than a benchmark of the latest app builds.
 
-Firmware **0.6.1** runs independent ABI v4 `.ekapp` packages from `/evilkey/apps/`. Swipe left from Home for the animated Apps screen, up/down for 3×3 icon pages and tap an app to run it. Packages require names/icons and the shared corner exit profile; app state is saved beside the package as `<id>.save`. Updates within the supported ABI only replace a file on the card. Game source/packages remain separately licensed and are not included here. The tested PCB V1 reports one touch contact. [Latest firmware and MIT SDK](https://github.com/mwr666/EvilKey-firmware/releases/tag/v0.6.1). The video shows the earlier launch flow used when filmed.
+Firmware **0.7.4** runs independent ABI v4/v5 `.ekapp` packages from `/evilkey/apps/`. Swipe left from Home for the animated Apps screen, up/down for 3×3 icon pages and tap an app to run it. Packages require names/icons and the shared corner exit profile; app state is saved beside the package as `<id>.save`. Updates within the supported ABI only replace a file on the card. Game source/packages remain separately licensed and are not included here. The tested PCB V1 reports one touch contact. [Latest firmware and MIT SDK](https://github.com/mwr666/EvilKey-firmware/releases/tag/v0.7.4). The video shows the earlier launch flow used when filmed.
 
 What app would you put on a device like this? Useful tools and gloriously unnecessary experiments are welcome.
 
