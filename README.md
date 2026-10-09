@@ -72,6 +72,10 @@ The separate Hak5 payload collection is not included. Four locally retained exam
 
 [▶ Watch the real-device GUI Short](https://youtube.com/shorts/MK2NCrWpuXo) — silent footage of the touchscreen in use on the prototype, with an animated logo ending. The USB Tool script demonstration above is a separate video.
 
+<p align="center"><a href="https://youtu.be/3SmAGgwEm9s"><img src="https://raw.githubusercontent.com/mwr666/EvilKey-firmware/main/docs/github/evilkey-interface-tour-poster.jpg" alt="Watch the EvilKey 0.7.4 host-rendered interface tour" width="420"></a></p>
+
+[▶ Watch the EvilKey 0.7.4 Interface Tour](https://youtu.be/3SmAGgwEm9s) — a host-rendered walk through the firmware UI and EvilBundle apps, including the USB Tool screen. It is not a USB script execution demo; the real-device USB Tool Short above shows that separately. EvilBundle packages are not included in these examples.
+
 ## Real Air Mouse demo
 
 <p align="center"><a href="https://youtube.com/shorts/b0x_XzGABB8"><img src="https://raw.githubusercontent.com/mwr666/EvilKey-firmware/main/docs/github/evilkey-air-mouse-short-poster.png" alt="Watch the real EvilKey Air Mouse Short" width="420"></a></p>
